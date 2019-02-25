@@ -1,0 +1,31 @@
+<div class="details">
+    <h1>{{ currentUser.name }}</h1>
+    <p>Username: {{ currentUser.username }}</p>
+    <p>Email: {{ currentUser.email }}</p>
+    <p>Phone:{{ currentUser.phone }}</p>
+    <p>Website: {{ currentUser.website }}</p>
+    <p>Company: {{ currentUser.company.name }}</p>
+    <button
+        *ngIf="!showAddress && currentUser.address.street"
+        class="btn btn-success mb-3"
+        (click)="toggleAddress()"
+    >
+        Show Address
+    </button>
+    <button
+        *ngIf="showAddress"
+        class="btn btn-success mb-3"
+        (click)="toggleAddress()"
+    >
+        Hide Address
+    </button>
+    <div *ngIf="showAddress">
+        <h4>Address</h4>
+        <p>{{ currentUser.address.street }}</p>
+        <p>{{ currentUser.address.suite }}</p>
+        <p>{{ currentUser.address.city }}</p>
+        <p>{{ currentUser.address.zipcode }}</p>
+    </div>
+    <button class="btn btn-warning" (click)="goBack()">Back to List</button>
+    <button class="btn btn-danger" [routerLink]="'edit'">Edit</button>
+</div>

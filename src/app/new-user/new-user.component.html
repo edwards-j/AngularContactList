@@ -1,0 +1,104 @@
+<h1>Create New Contact</h1>
+
+<form #f="ngForm" (ngSubmit)="saveNewContact(f.value)" novalidate>
+    <div class="form-group">
+        <label for="FirstLastName">Name: </label>
+        <input
+            (ngModel)="(newContact.name)"
+            class="form-control"
+            name="name"
+            id="FirstLastName"
+            type="text"
+        />
+    </div>
+    <div class="form-group">
+        <label for="Username">Username: </label>
+        <input
+            (ngModel)="(newContact.username)"
+            class="form-control"
+            name="username"
+            id="Username"
+            type="text"
+        />
+    </div>
+    <div class="form-group">
+        <label>Email: </label>
+        <input
+            (ngModel)="(newContact.email)"
+            class="form-control"
+            name="email"
+            type="text"
+        />
+    </div>
+    <div class="form-group">
+        <label>Phone: </label>
+        <input
+            (ngModel)="(newContact.phone)"
+            class="form-control"
+            name="phone"
+            type="text"
+        />
+    </div>
+    <div class="form-group">
+        <label>Website: </label>
+        <input
+            (ngModel)="(newContact.website)"
+            class="form-control"
+            name="website"
+            type="text"
+        />
+    </div>
+
+    <div ngModelGroup="company">
+        <div class="form-group">
+            <label>Company: </label>
+            <input
+                (ngModel)="(newContact.name)"
+                class="form-control"
+                name="name"
+                type="text"
+            />
+        </div>
+    </div>
+
+    <div class="form-group" ngModelGroup="address">
+        <div class="form-group">
+            <label>Street: </label>
+            <input
+                (ngModel)="(newContact.street)"
+                class="form-control"
+                name="street"
+                type="text"
+            />
+        </div>
+        <div class="form-group">
+            <label>Suite: </label>
+            <input
+                (ngModel)="(newContact.suite)"
+                class="form-control"
+                name="suite"
+                type="text"
+            />
+        </div>
+        <div class="form-group">
+            <label>City: </label>
+            <input
+                (ngModel)="(newContact.city)"
+                class="form-control"
+                name="city"
+                type="text"
+            />
+        </div>
+        <div class="form-group">
+            <label>Zipcode: </label>
+            <input
+                (ngModel)="(newContact.zipcode)"
+                class="form-control"
+                name="zipcode"
+                type="text"
+            />
+        </div>
+    </div>
+    <button class="btn btn-primary" type="submit">Save</button>
+    <button class="btn btn-warning" (click)="cancel()">Cancel</button>
+</form>

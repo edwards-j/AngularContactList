@@ -1,0 +1,15 @@
+<h1 class="text-center text-white">Contact List</h1>
+<div class="mx-auto">
+    <button class="btn btn-success addContactButton" [routerLink]="['/new']">
+        Add New Contact
+    </button>
+</div>
+<div class="wrapper">
+    <div
+        [routerLink]="[user.id]"
+        class="userCard"
+        *ngFor="let user of allUsers"
+    >
+        <h3>{{ user.name }}</h3>
+    </div>
+</div>
